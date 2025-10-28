@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col items-center bg-linear-to-br from-sky-50 to-blue-100 py-10 px-4 font-sans">
     <div class="w-full max-w-lg bg-white rounded-2xl shadow-lg overflow-hidden">
-      <h2 class="text-2xl font-semibold text-center bg-sky-600 text-white py-4">💬 Real-Time Chat</h2>
+      <h2 class="text-2xl font-semibold text-center bg-sky-600 text-white py-4">💬 Pop-Time Chat</h2>
 
       <!-- Username setup -->
       <div v-if="!usernameSet" class="flex flex-col items-center justify-center p-6 space-y-4">
