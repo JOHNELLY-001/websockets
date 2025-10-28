@@ -1,0 +1,4 @@
+Websocket: A protocol that enables real-time, bi-directional communication between client (like a webbrowser) and a 
+        server.
+
+Socket.io: Is a javascrript library that helps developers use websockets more easily.
