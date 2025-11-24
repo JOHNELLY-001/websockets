@@ -18,11 +18,11 @@ const io = new Server(server, {
   },
 });
 
-app.get('/', (req, res) => {
-  res.send('Chat server is running');
+app.get("/", (req, res) => {
+  res.send("Chat server is running");
 });
 
-// store all users for private messaging (optional)
+// store all users for private messaging AND online list
 let users = {};
 
 io.on("connection", (socket) => {
@@ -35,6 +35,9 @@ io.on("connection", (socket) => {
 
     console.log(`${username} joined the chat`);
     io.emit("system", `${username} joined the chat`);
+
+    // 👉 ADD: Send updated online users list
+    io.emit("onlineUsers", users);
   });
 
   // Handle chat message
@@ -65,6 +68,9 @@ io.on("connection", (socket) => {
       console.log(`${socket.username} disconnected`);
       io.emit("system", `${socket.username} left the chat`);
       delete users[socket.id];
+
+      // 👉 ADD: Send updated online users list
+      io.emit("onlineUsers", users);
     }
   });
 });
