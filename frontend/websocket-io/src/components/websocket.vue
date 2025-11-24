@@ -157,7 +157,7 @@ const props = defineProps({
 });
 const emit = defineEmits(["closeOnline"]);
 
-const socket = io("http://websockets-rxrp.onrender.com");
+const socket = io("https://websockets-rxrp.onrender.com");
 
 const username = ref("");
 const usernameSet = ref(false);
