@@ -14,11 +14,11 @@
         @click="showOnline = true"
         class="absolute top-3 right-3 text-xs bg-emerald-500 text-white px-3 py-1 rounded-full shadow hover:bg-cyan-700"
       >
-        👥 Who's Online
+        👥 Online
       </button>
 
       <h2 class="text-2xl font-semibold text-center bg-linear-to-br from-cyan-700 to-cyan-200 text-white py-4">
-        💬 Pop-Time Chat
+        💬 Pop-Chat
       </h2>
 
       <!-- Username setup -->
