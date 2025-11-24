@@ -12,7 +12,7 @@
       <button
         v-if="usernameSet"
         @click="showOnline = true"
-        class="absolute top-3 right-3 text-xs bg-emerald-500 text-white px-3 py-1 rounded-full shadow hover:bg-cyan-700"
+        class="absolute top-3 right-3 text-xs bg-emerald-500 text-white px-3 py-1 rounded-full shadow hover:bg-cyan-700 animate-bounce "
       >
         👥 Online
       </button>
