@@ -1,7 +1,8 @@
 <template>
-  <div class="min-h-screen flex flex-col items-center bg-linear-to-br from-sky-50 to-blue-100 py-10 px-4 font-sans">
+  <div class="min-h-screen flex flex-col items-center bg-linear-to-br from-sky-50 to-blue-100 py-10 px-4 font-sans rounded-b-2xl">
+    <p class="lg:text-2xl md:text-xl text-md mb-3 font-bold italic flex text-center ">Have Fun time with Friends and Folks</p>
     <div class="w-full max-w-lg bg-white rounded-2xl shadow-lg overflow-hidden">
-      <h2 class="text-2xl font-semibold text-center bg-sky-600 text-white py-4">💬 Pop-Time Chat</h2>
+      <h2 class="text-2xl font-semibold text-center bg-linear-to-br from-cyan-700  to-cyan-200 text-white py-4">💬 Pop-Time Chat</h2>
 
       <!-- Username setup -->
       <div v-if="!usernameSet" class="flex flex-col items-center justify-center p-6 space-y-4">
@@ -13,7 +14,7 @@
         />
         <button
           @click="setUsername"
-          class="w-full bg-sky-600 text-white py-2 rounded-md hover:bg-sky-700 transition"
+          class="w-full bg-linear-to-br from-cyan-600 to bg-yellow-100 font-semibold text-gray-800 py-2 rounded-md hover:bg-cyan-200 transition"
         >
           Join Chat
         </button>
@@ -39,13 +40,13 @@
                 :class="[
                   'max-w-[75%] rounded-2xl px-4 py-2 relative shadow-sm',
                   msg.user === username
-                    ? 'bg-sky-600 text-white rounded-br-none'
+                    ? 'bg-gray-600 text-white rounded-br-none'
                     : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none'
                 ]"
               >
                 <p class="text-sm">
                   <span class="font-semibold">{{ msg.user }}</span>
-                  <span class="block wrap-break-word">{{ msg.msg }}</span>
+                  <span class="block wrap-break-word pb-3">{{ msg.msg }}</span>
                 </p>
                 <span
                   class="absolute bottom-1 right-2 text-[0.65rem] opacity-80"
@@ -64,7 +65,7 @@
         <!-- Typing indicator -->
         <div
           v-if="typingUser && typingUser !== username"
-          class="px-4 py-1 text-sm text-gray-600 italic"
+          class="px-4 py-1 text-sm text-cyan-600 italic"
         >
           {{ typingUser }} is typing...
         </div>
@@ -80,7 +81,7 @@
           />
           <button
             @click="sendMessage"
-            class="ml-3 bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-lg transition"
+            class="ml-3 bg-linear-to-br from-gray-500 bg-cyan-600 text-white hover:text-gray-300 px-4 py-2 rounded-lg transition"
           >
             Send
           </button>
@@ -94,7 +95,7 @@
 import { ref, onMounted, watch, nextTick } from "vue";
 import { io } from "socket.io-client";
 
-const socket = io("https://websockets-rxrp.onrender.com/");
+const socket = io("http://localhost:5000");
 
 const username = ref("");
 const usernameSet = ref(false);
