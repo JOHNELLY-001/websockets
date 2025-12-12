@@ -18,20 +18,20 @@
       </button>
 
       <h2 class="text-2xl font-semibold text-center bg-linear-to-br from-cyan-700 to-cyan-200 text-white py-4">
-        💬 Pop-Chat
+        💬 <span class="italic">popChat</span>
       </h2>
 
       <!-- Username setup -->
       <div v-if="!usernameSet" class="flex flex-col items-center justify-center p-6 space-y-4">
         <input
           v-model="username"
-          placeholder="Enter your username"
+          placeholder="Enter your nickname"
           @keyup.enter="setUsername"
           class="w-full p-3 border rounded-md focus:ring-2 focus:ring-sky-500 outline-none"
         />
         <button
           @click="setUsername"
-          class="w-full bg-linear-to-br from-cyan-600 to bg-yellow-100 font-semibold text-gray-800 py-2 rounded-md hover:bg-cyan-200 transition"
+          class="w-full bg-linear-to-br from-cyan-600 to bg-green-200 font-semibold text-gray-800 py-2 rounded-md hover:bg-cyan-200 transition"
         >
           Join Chat
         </button>
@@ -98,7 +98,7 @@
           />
           <button
             @click="sendMessage"
-            class="ml-3 bg-linear-to-br from-gray-500 bg-cyan-600 text-white hover:text-gray-300 px-4 py-2 rounded-lg transition"
+            class="ml-3 bg-linear-to-br from-gray-500 bg-cyan-600 text-white hover:text-gray-300 px-2.5 py-1 rounded-lg transition"
           >
             Send
           </button>
