@@ -98,7 +98,7 @@
           />
           <button
             @click="sendMessage"
-            class="ml-3 bg-linear-to-br from-gray-500 bg-cyan-600 text-white hover:text-gray-300 px-2.5 py-1 rounded-lg transition"
+            class="ml-3 bg-linear-to-br from-gray-500 bg-cyan-600 text-sm text-white hover:text-gray-300 px-2.5 py-1 rounded-lg transition"
           >
             Send
           </button>
